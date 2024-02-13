@@ -3,12 +3,14 @@ import openai
 import sys
 import os
 from fpdf import FPDF
+from dotenv import load_dotenv
 
 import pdf_reader
 import lookup
 import gpt
 
-openai.api_key = os.getenv("OPENAI_API_KEY")
+load_dotenv()
+openai_api_key = os.getenv("OPENAI_API_KEY")
 
 if not openai.api_key:
     openai.api_key = input("Please enter your OpenAI API key: ")
